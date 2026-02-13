@@ -52,6 +52,7 @@
         .password-input {
             width: 100%;
             padding: 12px;
+            padding-right: 44px;
             border: 2px solid #ffb7c5;
             border-radius: 10px;
             margin-bottom: 15px;
@@ -59,6 +60,26 @@
             text-align: center;
             outline: none;
             transition: border-color 0.3s;
+        }
+
+        .password-field {
+            position: relative;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 40.1%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            color: #d81b60;
+            padding: 4px;
         }
         
         .password-input:focus {

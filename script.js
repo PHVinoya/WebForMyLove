@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const mainContent = document.getElementById('mainContent');
             const passwordInput = document.getElementById('passwordInput');
             const submitPassword = document.getElementById('submitPassword');
+            const togglePassword = document.getElementById('togglePassword');
             
             submitPassword.addEventListener('click', function() {
-                if (passwordInput.value.toLowerCase() === 'babycakes') {
+                if (passwordInput.value.toLowerCase() === 'september202025') {
                     passwordModal.style.opacity = '0';
                     setTimeout(() => {
                         passwordModal.style.display = 'none';
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 500);
                 } else {
                     passwordInput.value = '';
-                    passwordInput.placeholder = 'Try again, my love...';
+                    passwordInput.placeholder = 'Try again, love...';
                     passwordInput.style.borderColor = '#ff4d4d';
                     setTimeout(() => {
                         passwordInput.style.borderColor = '#ffb7c5';
@@ -38,6 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitPassword.click();
                 }
             });
+
+            // Toggle show/hide password
+            if (togglePassword) {
+                togglePassword.addEventListener('click', function() {
+                    const isPassword = passwordInput.getAttribute('type') === 'password';
+                    passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+                    this.textContent = isPassword ? '🙈' : '👁️';
+                    this.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+                });
+            }
             
             // Tab switching
             const tabs = document.querySelectorAll('.tab');
