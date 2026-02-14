@@ -272,6 +272,43 @@
         .letter1.expanded .letter-content1 {
             max-height: 500px;
         }
+
+        /* Love Letter Tab2 */
+
+        .letter2 {
+            padding: 20px;
+            background: #fff5f7;
+            border-radius: 15px;
+            border: 2px dashed #ffb7c5;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .letter-header2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .letter2 h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            color: #d81b60;
+        }
+        
+        .letter-content2 {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .letter2.expanded .letter-content2 {
+            max-height: 500px;
+        }
+
+    
         .justi
         {
             text-align: justify;
@@ -286,6 +323,27 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            position: relative;
+            padding-right: 60px;
+        }
+
+        .play-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #d81b60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .play-btn:hover {
+            background: #b71550;
         }
         
         .song-icon {

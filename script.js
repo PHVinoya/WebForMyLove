@@ -71,9 +71,53 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 });
             });
+
+            // Music player: play/pause per song and ensure only one plays at a time
+            const songs = document.querySelectorAll('.song');
+            let currentAudio = null;
+            let currentBtn = null;
+
+            songs.forEach(song => {
+                const btn = song.querySelector('.play-btn');
+                const audio = song.querySelector('audio');
+                if (!btn || !audio) return;
+
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // prevent triggering other click handlers (e.g., expandable letters)
+
+                    // If a different audio is playing, stop it
+                    if (currentAudio && currentAudio !== audio) {
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0;
+                        if (currentBtn) currentBtn.textContent = '▶️';
+                    }
+
+                    if (audio.paused) {
+                        audio.play();
+                        btn.textContent = '⏸️';
+                        currentAudio = audio;
+                        currentBtn = btn;
+                    } else {
+                        audio.pause();
+                        btn.textContent = '▶️';
+                        if (currentAudio === audio) {
+                            currentAudio = null;
+                            currentBtn = null;
+                        }
+                    }
+                });
+
+                audio.addEventListener('ended', function() {
+                    btn.textContent = '▶️';
+                    if (currentAudio === audio) {
+                        currentAudio = null;
+                        currentBtn = null;
+                    }
+                });
+            });
             
             // Expandable love letters with auto-close functionality
-            const letters = document.querySelectorAll('.letter, .letter1');
+            const letters = document.querySelectorAll('.letter, .letter1, .letter2');
             
             letters.forEach(letter => {
                 letter.addEventListener('click', function() {
