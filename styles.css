@@ -369,9 +369,82 @@
             margin-bottom: 15px;
             border-left: 4px solid #d81b60;
         }
+
+        /* Clickable Notes Group */
+        .clickable-notes-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .clickable-note {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #ffb7c5, #ffc1cc);
+            border-radius: 12px;
+            text-decoration: none;
+            color: #8a1c4a;
+            border-left: 4px solid #d81b60;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(216, 27, 96, 0.1);
+            cursor: pointer;
+        }
+
+        .clickable-note:hover {
+            transform: translateX(8px);
+            box-shadow: 0 6px 16px rgba(216, 27, 96, 0.25);
+            background: linear-gradient(135deg, #ffc1cc, #ffd1dc);
+        }
+
+        .note-icon {
+            font-size: 28px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .note-content {
+            flex: 1;
+        }
+
+        .note-content h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .note-content p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .note-arrow {
+            font-size: 18px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .clickable-note:hover .note-arrow {
+            transform: translateX(4px);
+        }
+
+        .rmg{
+            padding: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
         
         /* Gallery Tab */
         .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .games-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
@@ -442,6 +515,12 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .minigame-gallery{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
         
         /* Decorative Elements */
         .heart, .teddy-bear {
@@ -461,6 +540,8 @@
             font-size: 32px;
             animation: float 8s ease-in-out infinite;
         }
+
+
         
         /* Animations */
         @keyframes bounceIn {
