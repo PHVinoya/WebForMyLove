@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const togglePassword = document.getElementById('togglePassword');
             
             submitPassword.addEventListener('click', function() {
-                if (passwordInput.value.toLowerCase() === 'love') {
+                if (passwordInput.value.toLowerCase() === 'september202025') {
                     passwordModal.style.opacity = '0';
                     setTimeout(() => {
                         passwordModal.style.display = 'none';
