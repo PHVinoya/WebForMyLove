@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const togglePassword = document.getElementById('togglePassword');
             
             submitPassword.addEventListener('click', function() {
-                if (passwordInput.value.toLowerCase() === 'september202025') {
+                if (passwordInput.value.toLowerCase() === 'love') {
                     passwordModal.style.opacity = '0';
                     setTimeout(() => {
                         passwordModal.style.display = 'none';
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     passwordInput.style.borderColor = '#ff4d4d';
                     setTimeout(() => {
                         passwordInput.style.borderColor = '#ffb7c5';
-                        passwordInput.placeholder = 'Our special word...';
+                        passwordInput.placeholder = 'date we became official...';
                     }, 1500);
                 }
             });
@@ -72,11 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // Expandable love letter
-            const loveLetter = document.getElementById('loveLetter');
-            loveLetter.addEventListener('click', function() {
-                this.classList.toggle('expanded');
+            // Expandable love letters with auto-close functionality
+            const letters = document.querySelectorAll('.letter, .letter1');
+            
+            letters.forEach(letter => {
+                letter.addEventListener('click', function() {
+                    // Close all other letters
+                    letters.forEach(otherLetter => {
+                        if (otherLetter !== this) {
+                            otherLetter.classList.remove('expanded');
+                        }
+                    });
+                    // Toggle the clicked letter
+                    this.classList.toggle('expanded');
+                });
             });
+            
             
             // Add floating decorative elements
             function addFloatingElements() {
